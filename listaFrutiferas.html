@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frutas do Brejo</title>
+  <link rel="icon" type="image/x-icon" href="./assets/image/arvore.svg">
+
+  <!-- Bootstrap -->
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Toastfy -->
+  <link rel="stylesheet" type="text/css" href="./node_modules/toastify-js/src/toastify.css">
+
+  <link href="./assets/css/index.css" rel="stylesheet">
+  <link href="./assets/css/footer.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(196, 255, 137);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html" style="color: rgb(9, 97, 9);">
+          <img src="./assets/image/arvore.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          Frutas do Brejo
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./cardapio.html">Cardápio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="input-group my-4">
+      <input type="search" class="form-control rounded" id="buscaInput" placeholder="Pesquisar"/>
+      <button type="button" class="btn btn-primary">
+        <img src="./assets/image/search.svg" alt="Pesquisar">
+      </button>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#frutiferaModal">
+        <img src="./assets/image/plus.svg" alt="Adicionar">
+      </button>
+    </div>
+
+    <div class="container mt-2">
+      <div class="row" id="tabelaFrutas">
+      </div>
+    </div>
+
+    <div class="modal fade" id="frutiferaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Nova Planta</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="frutiferaForm" method="post">
+            <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nomePopular" class="form-label">Nome Popular</label>
+                  <input type="text" class="form-control" name="nomePopular" id="nomePopular">
+                </div>
+                <div class="mb-3">
+                  <label for="nomeCientifico" class="form-label">Nome Científico</label>
+                  <input type="text" class="form-control" name="nomeCientifico" id="nomeCientifico">
+                </div>
+                <div class="mb-3">
+                  <label for="producao" class="form-label">Produção média em kg</label>
+                  <input type="number" class="form-control" name="producao" id="producao">
+                </div>
+                <div class="mb-3">
+                  <label for="dataPlantio" class="form-label">Data de plantio</label>
+                  <input type="date" class="form-control" name="dataPlantio" id="dataPlantio">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto" style="background-color: rgb(196, 255, 137);">
+    <div class="container">
+      <div class="row">
+        <div class="col mt-3 mb-3">
+          <a class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" href="#">
+            <img src="./assets/image/arvore-black.svg" alt="Logo" width="40" class="d-inline-block align-text-top">
+          </a>
+          <p class="text-body-secondary">© 2026</p>
+        </div>
+        <ul class="nav col justify-content-end">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item active"><a href="#" class="nav-link px-2 text-muted">Cardápio</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script src="./node_modules/toastify-js/src/toastify.js"></script>
+
+  <script src="./src/listaFrutiferas.js" type="module"></script>
+</body>
+</html>
