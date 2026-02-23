@@ -3,6 +3,9 @@ let frutiferaForm = document.getElementById("frutiferaForm");
 const addItemCardapioTable = (itemFrutifera) => {
     let itensFrutiferaTBody = document.getElementById('tabelaFrutas');
     const dataPlantio = new Date(itemFrutifera.dataPlantio);
+
+    moment.locale("pt-br")
+
     let itemFrutiferaTr = `
         <div class="col p-1">
             <div class="card" style="width: 18rem;">
@@ -13,6 +16,7 @@ const addItemCardapioTable = (itemFrutifera) => {
                     <li class="list-group-item">Nome Científico: ${itemFrutifera.nomeCientifico}</li>
                     <li class="list-group-item">Produção Média: ${itemFrutifera.producao} kg</li>
                     <li class="list-group-item">Data de Plantio: ${dataPlantio.toLocaleDateString("pt-BR", {timeZone: 'UTC'})}</li>
+                    <li class="list-group-item">Plantado ${moment(dataPlantio).fromNow()}</li>
                 </ul>
             </div>
         </div>
@@ -24,6 +28,8 @@ const addItemCardapioTable = (itemFrutifera) => {
 function loadTable(planta) {
     const container = document.getElementById("tabelaFrutas");
     const dataPlantio = new Date(planta.dataPlantio);
+
+    moment.locale("pt-br")
     
     container.insertAdjacentHTML("afterbegin", `
         <div class="col p-1">
@@ -35,6 +41,7 @@ function loadTable(planta) {
                     <li class="list-group-item">Nome Científico: ${planta.nomeCientifico}</li>
                     <li class="list-group-item">Produção Média: ${planta.producao} kg</li>
                     <li class="list-group-item">Data de Plantio: ${dataPlantio.toLocaleDateString("pt-BR", {timeZone: 'UTC'})}</li>
+                    <li class="list-group-item">Plantado ${moment(dataPlantio).fromNow()}</li>
                 </ul>
             </div>
         </div>
