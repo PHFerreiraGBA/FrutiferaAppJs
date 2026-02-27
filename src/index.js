@@ -1,5 +1,11 @@
 import { preparacoesCard } from './dataset/preparacoes.js';
 
+/*
+  A função getCartao pega um dos cards presentes
+  em PreparacoesCard (item) e reestrutura como um 
+  HTML para um card do Bootstrap.
+*/
+
 let getCartao = (item) => {
   return `<div class="col p-1">
           <div class="card">
@@ -13,13 +19,22 @@ let getCartao = (item) => {
         </div>`;
 };
 
+/*
+  Já a função setCartaoCol pega a resposta de getCartao
+  e insere na div cartoes.
+*/
+
 let setCartaoCol = (cartao) => {
   let cartoesDiv = document.getElementById('cartoes');
   cartoesDiv.insertAdjacentHTML('beforeend', cartao);
 };
 
+/*
+  Por último, a função createCartoes executa as funções
+  getCartao e setCartaoCol para cada item de preparacoesCard.
+*/
+
 let createCartoes = () => {
-  // Mini teste no retorno das férias. Eba!\o/
   for (let item of preparacoesCard) {
     // Html completo referente a cada card com o conteúdo.
     let cartao = getCartao(item);
@@ -29,4 +44,4 @@ let createCartoes = () => {
   }
 };
 
-createCartoes();
+createCartoes(); // Função para criar cards executada.

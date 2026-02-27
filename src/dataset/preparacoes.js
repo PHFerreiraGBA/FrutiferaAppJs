@@ -1,3 +1,7 @@
+/*
+  Essa lista de nome PreparacoesCard contém os dados
+  para construir os cards da Home da página.
+*/
 let preparacoesCard = [
   {
     src: 'https://www.petz.com.br/blog/wp-content/uploads/2022/09/como-plantar-pitaya-no-vaso-interna2.jpg',
@@ -19,8 +23,8 @@ let preparacoesCard = [
   },
 ];
 
-let preparacoesCardapio = [];
 
-let inserirPreparacao = () => {};
+//  PreparacoesCard será exportada aqui e reutilizada no index.js.
 
-export { preparacoesCard, preparacoesCardapio, inserirPreparacao };
+
+export { preparacoesCard };
