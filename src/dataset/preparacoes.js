@@ -23,8 +23,6 @@ let preparacoesCard = [
   },
 ];
 
-
 //  PreparacoesCard será exportada aqui e reutilizada no index.js.
-
 
 export { preparacoesCard };

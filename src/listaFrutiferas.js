@@ -2,7 +2,7 @@
 let frutiferaForm = document.getElementById("frutiferaForm");
 
 /*
-    A função loadTable carrega as informações de cada árvore e formata
+    A função addItemCardapioTable carrega as informações de cada árvore e formata
     em um card, cada uma com o seu. Antes, ela colocava as árvores numa
     tabela, mas, devido aos requisitos da aplicação, ela coloca-as em cards.
 */
